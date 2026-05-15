@@ -11,7 +11,9 @@ const HeroPattern: React.FC = () => {
   useEffect(() => {
     const update = () => {
       // +1 buffer so edges always stay covered when the viewport isn't a clean multiple
-      setFrameCount(Math.max(3, Math.ceil(window.innerWidth / FRAME_WIDTH) + 1));
+      setFrameCount(
+        Math.max(3, Math.ceil(window.innerWidth / FRAME_WIDTH) + 1),
+      );
     };
     update();
     window.addEventListener("resize", update);
