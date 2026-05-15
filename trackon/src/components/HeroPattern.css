@@ -1,0 +1,68 @@
+/* Pattern viewport — Figma height 596.39, opacity 0.08. Width is now responsive. */
+.hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 596.39px;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-pattern__grid {
+  display: flex;
+  height: 100%;
+  /* Width grows with the number of frames; centered via parent's flex */
+}
+
+/* One frame = 3 slots × 68.38px = 205.14px */
+.hero-pattern__frame {
+  display: flex;
+  width: 205.14px;
+  height: 100%;
+  flex-shrink: 0;
+  align-items: flex-start;
+}
+
+/*
+ * Each "line" is one Figma rectangle (1211.81 × 68.38, rotated 90°).
+ * After all the nested rotations (-180 outer, -180 inner, 90 rect), the
+ * original bottom-center glow lands on the RIGHT edge of the vertical bar.
+ *  - background: soft radial halo hugging the right edge, vertically centered
+ *  - ::before:   the 0.87px sharp spine on the right edge, fading at top/bottom
+ */
+.hero-pattern__line {
+  position: relative;
+  width: 68.38px;
+  background: radial-gradient(
+    87.97% 27.28% at 100% 50%,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.hero-pattern__line::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.87px;
+  height: 100%;
+  background: radial-gradient(
+    600% 18.61% at 100% 50%,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.hero-pattern__line--tall {
+  height: 100%;
+}
+
+.hero-pattern__line--short {
+  height: 90.65%; /* 1098.42 / 1211.81 from the Figma source heights */
+}
