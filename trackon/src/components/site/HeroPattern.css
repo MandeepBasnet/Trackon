@@ -28,13 +28,19 @@
 .hero-pattern__line {
   position: relative;
   width: 68.38px;
+  /*
+   * Figma's source rectangle has the radial glow at 50% 100% (bottom-center) and a border-bottom,
+   * but the rect is rotated 90° in the design so visually those land at the TOP of the vertical line.
+   * Anchoring directly at top-center here so the orientation matches the design without a transform.
+   */
   background: radial-gradient(
-    87.97% 27.28% at 100% 50%,
+    27.28% 87.97% at 50% 0%,
     rgba(255, 255, 255, 0.2) 0%,
     rgba(255, 255, 255, 0) 100%
   );
 }
 
+/* The 0.87px straight vertical line — Figma's "border-bottom + border-image" expressed as a vertical spine */
 .hero-pattern__line::before {
   content: '';
   position: absolute;
@@ -42,8 +48,8 @@
   right: 0;
   width: 0.87px;
   height: 100%;
-  background: radial-gradient(
-    600% 18.61% at 100% 50%,
+  background: linear-gradient(
+    to bottom,
     rgba(255, 255, 255, 0.6) 0%,
     rgba(255, 255, 255, 0) 100%
   );

@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   padding-top: 240px;
-  background-color: var(--bg-primary);
+  /* No bg-color — body provides #010A14 underneath, and the page-level blobs need to show through */
   overflow: hidden;
 }
 

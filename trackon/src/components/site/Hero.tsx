@@ -7,10 +7,6 @@ const Hero: React.FC = () => {
   return (
     <section className="hero">
       <HeroPattern />
-      <div className="mesh-gradient">
-        <div className="blob blob-cyan" />
-        <div className="blob blob-blue" />
-      </div>
 
       <div className="container hero-container">
         <div className="hero-content">
