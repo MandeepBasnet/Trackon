@@ -1,4 +1,3 @@
-/* Pattern viewport — Figma height 596.39, opacity 0.08. Width is now responsive. */
 .hero-pattern {
   position: absolute;
   top: 0;
@@ -16,10 +15,8 @@
 .hero-pattern__grid {
   display: flex;
   height: 100%;
-  /* Width grows with the number of frames; centered via parent's flex */
 }
 
-/* One frame = 3 slots × 68.38px = 205.14px */
 .hero-pattern__frame {
   display: flex;
   width: 205.14px;
@@ -28,13 +25,6 @@
   align-items: flex-start;
 }
 
-/*
- * Each "line" is one Figma rectangle (1211.81 × 68.38, rotated 90°).
- * After all the nested rotations (-180 outer, -180 inner, 90 rect), the
- * original bottom-center glow lands on the RIGHT edge of the vertical bar.
- *  - background: soft radial halo hugging the right edge, vertically centered
- *  - ::before:   the 0.87px sharp spine on the right edge, fading at top/bottom
- */
 .hero-pattern__line {
   position: relative;
   width: 68.38px;
@@ -64,5 +54,5 @@
 }
 
 .hero-pattern__line--short {
-  height: 90.65%; /* 1098.42 / 1211.81 from the Figma source heights */
+  height: 90.65%;
 }

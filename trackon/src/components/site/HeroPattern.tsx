@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import './HeroPattern.css';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import "./HeroPattern.css";
 
 const FRAME_WIDTH = 205.14;
 
-const HeroPattern = () => {
+const HeroPattern: React.FC = () => {
   const [frameCount, setFrameCount] = useState(7);
 
   useEffect(() => {
@@ -12,8 +14,8 @@ const HeroPattern = () => {
       setFrameCount(Math.max(3, Math.ceil(window.innerWidth / FRAME_WIDTH) + 1));
     };
     update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
   }, []);
 
   return (

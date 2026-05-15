@@ -38,9 +38,8 @@
   color: rgba(255, 255, 255, 0.8);
 }
 
-
 .navbar-scrolled {
-  background: rgba(33, 31, 38, 0.9); /* Matching new --bg-primary */
+  background: rgba(33, 31, 38, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -65,7 +64,6 @@
   transition: padding 0.3s ease;
 }
 
-/* Logo Styling */
 .navbar-logo {
   flex-shrink: 0;
   width: 128px;
@@ -86,25 +84,12 @@
   object-fit: contain;
 }
 
-/* Theme-based Logo Visibility */
-.logo-light {
-  display: none;
-}
+.logo-light { display: none; }
+.logo-dark { display: block; }
 
-.logo-dark {
-  display: block;
-}
+:root[data-theme='light'] .logo-light { display: block; }
+:root[data-theme='light'] .logo-dark { display: none; }
 
-/* Force light logo ONLY if explicitly set via data-theme */
-:root[data-theme='light'] .logo-light {
-  display: block;
-}
-
-:root[data-theme='light'] .logo-dark {
-  display: none;
-}
-
-/* Nav Links */
 .navbar-links {
   display: flex;
   align-items: center;
@@ -131,14 +116,12 @@
   opacity: 0.6;
 }
 
-/* Actions */
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-/* Button Customizations for Nav */
 .btn-signin {
   background: #2d2d2d !important;
   color: white !important;
